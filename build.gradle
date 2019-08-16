@@ -1,47 +1,50 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext {
+
+    ext.kotlin_version = '1.3.41'
+
+    ext.appCompatVersion = '1.0.2'
+    ext.constraintLayoutVersion = '1.1.3'
+    ext.coreTestingVersion = '2.0.0'
+    ext.coroutinesVersion = "1.2.0"
+    ext.espressoVersion = '3.1.1'
+    ext.fragmentVersion = '1.0.0'
+    ext.glideVersion = '4.9.0'
+    ext.gradleVersion = '3.4.2'
+    ext.gsonVersion = '2.8.2'
+    ext.junitVersion = '4.12'
+    ext.ktlintVersion = '0.30.0'
+    ext.ktxVersion = '1.0.2'
+    ext.lifecycleVersion = '2.2.0-alpha03'
+    ext.materialVersion = '1.0.0'
+    ext.navigationVersion = '2.0.0'
+    ext.recyclerViewVersion = '1.0.0'
+    ext.roomVersion = '2.1.0'
+    ext.runnerVersion = '1.0.1'
+    ext.truthVersion = '0.42'
+    ext.testExtJunit = '1.1.0'
+    ext.uiAutomatorVersion = '2.2.0'
+    ext.workVersion = '2.2.0'
+    ext.leakcanaryVersion = "2.0-beta-2"
+    ext.buglyVersion = "3.0.1"
+    ext.buglyuploaderVersion = "2.2.1"
+    ext.fireCrasherVersion = "2.0.0"
+    ext.okhttpVersion = "4.1.0"
+    ext.retrofitVersion = "2.6.1"
+    ext.lottieVersion = '3.0.1'
+  /*  ext {
         //basic
         compileSdkVersion = 29
         minSdkVersion = 22
         targetSdkVersion = 29
-        kotlin_version = '1.3.41'
 
-        appCompatVersion = '1.0.2'
-        constraintLayoutVersion = '1.1.3'
-        coreTestingVersion = '2.0.0'
-        coroutinesVersion = "1.2.0"
-        espressoVersion = '3.1.1'
-        fragmentVersion = '1.0.0'
-        glideVersion = '4.9.0'
-        gradleVersion = '3.4.2'
-        gsonVersion = '2.8.2'
-        junitVersion = '4.12'
-        ktlintVersion = '0.30.0'
-        ktxVersion = '1.0.2'
-        lifecycleVersion = '2.2.0-alpha03'
-        materialVersion = '1.0.0'
-        navigationVersion = '2.0.0'
-        recyclerViewVersion = '1.0.0'
-        roomVersion = '2.1.0'
-        runnerVersion = '1.0.1'
-        truthVersion = '0.42'
-        testExtJunit = '1.1.0'
-        uiAutomatorVersion = '2.2.0'
-        workVersion = '2.2.0'
 
-        leakcanaryVersion="2.0-beta-2"
-        buglyVersion="3.0.1"
-        buglyuploaderVersion="2.2.1"
-
-        fireCrasherVersion="2.0.0"
-
-    }
+    }*/
     repositories {
         google()
         jcenter()
-        
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
@@ -58,7 +61,7 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
-        
+
     }
 }
 

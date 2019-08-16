@@ -11,14 +11,14 @@ bugly {
 }
 
 android {
-    compileSdkVersion rootProject.compileSdkVersion
+    compileSdkVersion 29
     dataBinding {
         enabled = true
     }
     defaultConfig {
         applicationId "com.maxpeedingrods.mall"
-        minSdkVersion rootProject.minSdkVersion
-        targetSdkVersion rootProject.targetSdkVersion
+        minSdkVersion 22
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -43,7 +43,6 @@ android {
 
 dependencies {
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
-    kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
@@ -56,12 +55,33 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     implementation "androidx.work:work-runtime-ktx:$rootProject.workVersion"
-    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+
     implementation "com.google.android.material:material:$rootProject.materialVersion"
-    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlin_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
+
+    //https://github.com/bumptech/glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+
+    //https://github.com/google/gson
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    //https://github.com/square/leakcanary
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanaryVersion"
+    //https://bugly.qq.com/v2
+    implementation "com.tencent.bugly:crashreport:$rootProject.buglyVersion"
+    //https://github.com/osama-raddad/FireCrasher
+    implementation "com.github.osama-raddad:FireCrasher:$rootProject.fireCrasherVersion"
+
+    //https://github.com/square/okhttp
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
+
+    //https://github.com/square/retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    //https://github.com/airbnb/lottie-android
+    implementation "com.airbnb.android:lottie:${lottieVersion}"
 
     // Testing dependencies
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
@@ -73,10 +93,7 @@ dependencies {
     androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
     androidTestImplementation "com.google.truth:truth:$rootProject.truthVersion"
     testImplementation "junit:junit:$rootProject.junitVersion"
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanaryVersion"
 
-    implementation "com.tencent.bugly:crashreport:$rootProject.buglyVersion"
-    implementation "com.github.osama-raddad:FireCrasher:$rootProject.fireCrasherVersion"
 
 
 }

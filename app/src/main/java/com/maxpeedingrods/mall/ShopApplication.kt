@@ -9,7 +9,7 @@ class ShopApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        //enabledStrictMode()
+        enabledStrictMode()
         //bugly注册
         CrashReport.initCrashReport(getApplicationContext(), "77e4d3ae78", BuildConfig.DEBUG)
         CrashReport.setIsDevelopmentDevice(getApplicationContext(), BuildConfig.DEBUG)

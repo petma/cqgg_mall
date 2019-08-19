@@ -27,10 +27,34 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    //签名设置
+    signingConfigs {
+        debug {
+            keyAlias 'debug'
+            keyPassword 'cqdebuggg'
+            storeFile file('../keystore/cqgg.jks')//加"../"表示该文件位于上一级即项目根路径下
+            storePassword 'cq666666gg'
+        }
+        release {
+            keyAlias 'release'
+            keyPassword 'cqreleasegg'
+            storeFile file('../keystore/cqgg_release.jks')
+            storePassword 'cq666666gg'
+        }
+
+    }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            buildConfigField "Boolean", "DEBUG_MODE", "false"
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            buildConfigField "Boolean", "DEBUG_MODE", "true"
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     kotlinOptions {

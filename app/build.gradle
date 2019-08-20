@@ -63,6 +63,21 @@ android {
     packagingOptions {
         pickFirst("META-INF/atomicfu.kotlin_module")
     }
+    // 修改生成的apk名字 AS3.2.1，AS3.0以下这里配置稍有不同   自行修改
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def newName
+
+            if (variant.buildType.name.equals('debug')) {
+                newName = "cqgg-v${versionName}-debug.apk"
+            } else {
+                // newName = 'HelloJenkins-v' + defaultConfig.versionName + '-' + timeNow +
+                // '-' + variant.buildType.name + '.apk'
+                newName = "cqgg-v${versionName}.apk"
+            }
+            outputFileName = newName
+        }
+    }
 }
 
 dependencies {
